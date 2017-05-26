@@ -1,3 +1,5 @@
+package item1;
+
 /**
  * Created by lbuthman on 5/24/17.
  * Using public static factory methods instead of constructors
@@ -21,7 +23,7 @@ class Brewer {
 
 public class Item1Experiment {
     public static void main(String[] args) {
-        //Brewer failBrew = new Brewer();
+        //item1.Brewer failBrew = new item1.Brewer();
         Brewer goodBrew = Brewer.makeBrew();
         goodBrew.cookBrew();
     }
