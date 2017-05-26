@@ -1,0 +1,51 @@
+Public static factory methods instead of constructors
+
+- not the same as the Factory Pattern
+
+++Advantages++
+    1) Unlike constructors, they have names
+        * example BigInteger(int, int, Random) -> this constructor returns a number that is probably
+        prime, but this meaning is not readily apparent. Compare that w/ BigInteger.probablePrime();
+        and you can see the difference.
+        * Classes can have only one constructor with a given signature. Work-arounds exist but can
+        easily lead to confusion.
+    2) Not required to create a constructor every time they are called, unlike a Constructor.
+    This allows immutable classes and cached instances to be called as needed without
+    creating duplicates. This is supposedly similar to FlyWeight Patterns. (CR Item 15)
+        * This allows classes to be "instance controlled": can guarantee Singleton and/or
+        can guarantee the class is non-instantiable (CR Item 3 and Item 4)
+
+~~~~~~~~~HIGHLIGHT PG.6~~~~~~~~~~~~~~
+
+    3) Unlike constructors, static factory methods can return a subtype of their return type,
+    providing flexibility in the returned class. This can allow us to return classes that aren't
+    public, thus hiding implementation classes, slimming down the API which leads to
+    "interface-based frameworks" (CR Item 18)
+
+~~~~~~~~~HIGHLIGHT PG.7~~~~~~~~~~~~~~
+
+        * a static factory method requires the client programmer to refer to the returned object from
+        the interface rather than its implementation (which is good they say) (CR Item 52)
+        * Because it can return various objects based on the provided parameters, the implementation
+        can be changed at any time without problems for those who rely or use the class.
+        * This also provides the bases for "service provider frameworks" like JDBC
+
+#######ParkingLot pg.8#######
+
+    4) They reduce the verbosity of creating parameterized instances.
+        * With static factories, the compiler can figure out the type parameters for you, which
+        is known as "type inference"
+        Map<String, List<String>> m = new HashMap<String, List<String>>();
+                            vs.
+        public static <K,V> HashHap<K,V> newInstance() { return new HashMap<K,V>();}
+
+        Map<String, List<String>> m = HashMap.newInstance();
+
+--Disadvantages--
+    1) Classes can't be subclassed (inherited, extended)
+        @ However, this does "encourage" programmers to use composition over inheritance
+    2) They don't draw attention the same way a constructor does
+        @ Overcome with smart naming and/or following conventions.
+
+Naming Convention Examples
+    (valueOf ;   of ;   getInstance ;   newInstance ;   getType ;   newType ;)
