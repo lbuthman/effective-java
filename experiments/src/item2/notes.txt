@@ -1,3 +1,5 @@
+Consider a builder when faced with many constructor parameters
+
 - Static factory methods and constructors don't scale well for large numbers of optional
 parameters. Consider a class representing an object with a couple mandatory parameters
 and severl optional parameters.
