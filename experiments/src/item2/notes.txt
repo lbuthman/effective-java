@@ -1,0 +1,40 @@
+- Static factory methods and constructors don't scale well for large numbers of optional
+parameters. Consider a class representing an object with a couple mandatory parameters
+and severl optional parameters.
+
+- This has traditionally been approached with the telescoping constructor.
+    * One constructor with mandatory parameters and additional overloaded constructors with
+    an additional added parameter per constructor
+    * This forces one to use parameters that may not be wanted, which in turn is harder
+    to read and harder to write
+    * Prone to bugs because if parameters get switched on accident, the compiler won't notice
+
+- Alternatively, a JavaBean pattern could be applied, a parameterless constructor with
+setter methods for each attribute
+    * The drawback for this pattern is that it is constructed over multiple calls. During
+    construction, the object can be in an incomplete state. The class could be used in
+    this state causing a failure that is far away from the point of failure, which makes
+    it difficult to detect. This is also not thread safe.
+    * There is no way to make the class immutable since setters can be called at any time.
+
+- Builder Pattern can resolve these deficiencies. It is a combination of the safety from
+telescoping with the readability of the JavaBeans pattern.
+    * The inner static Builder class contains a constructor with mandatory parameters.
+    Then there are public setter methods for each optional parameter. These methods return
+    the inner class after setting the value -- att = val; return this;
+    * Then, a public build method returns the outer class with the inner class acting
+    as the parameter to its constructor -- Outer(this);
+    * In the outer class, the private constructor takes the Build class as a parameter
+    and assigns its attributes with inner.attr value.
+
+~~~~~~~HIGHLIGHT pg. 15 -> invariant and invariant checking~~~~~~~
+
+- Builders can have multiple vargs, one for each parameter. Contrast this with a constructor
+where there can be only one.
+- A Builder could be made to automatically set a field like id and auto-increment it.
+
+~~~~~~~HIGHLIGHT pg. 15 -> builder as an Abstract Factory~~~~~~~
+
+- Final takeaway. Builder patterns are good when designing classes whose constructors
+or static factories would have more than a hand full of parameters, especially if the
+parameters are optional.
