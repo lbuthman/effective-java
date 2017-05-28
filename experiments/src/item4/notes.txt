@@ -1,0 +1,4 @@
+Enforce instantiability with private constructor
+
+- Utility classes that contain only static methods can prevent instantiation with private
+constructor that throws an AssertionError()
