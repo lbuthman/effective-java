@@ -1,0 +1,18 @@
+Enforce the singleton property with a private constructor or enum type
+
+- Making a class a singleton can make it difficult to test its clients, as it's impossible
+to substitute a mock implementation for a singleton unless it implements an interface that
+serves as its type.
+
+~~~~~~~HIGHLIGHT pg. 17 - invoke private constructor effectively~~~~~~~
+
+~~~~~~~HIGHLIGHT pg. 18 - make Singleton serializable~~~~~~~
+
+- Implement Singletons 1 of 3 ways
+    1) private constructor with public final class instance
+    2) same as above but set references with getReference method
+    3) make Enum type for class
+        * functionally equivalent to above
+        * ironclad guarantee against multiple instantiation even against sophisticated
+        serialization or reflection attacks
+        * not widely adopted
