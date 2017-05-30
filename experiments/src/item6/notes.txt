@@ -1,0 +1,23 @@
+Eliminate obsolete object references
+
+- If a stack grows, then shrinks, the objects that were popped off the stack will not
+be garbage collected. This is because the stack maintains obsolete references to these
+objects. An obsolete reference is a reference that will never be dereferenced.
+
+- Memory leaks in garbage collected languages are known an unintentional object
+references. If an object is unintentionally retained, not only is that object excluded
+from garbage collection, but so are any objects referenced by that object.
+
+- Null out the reference to fix this problem. In the example, after the item is
+popped off the stack, it should be nulled out
+
+- Nulling out object references should be the exception rather than the rule. The
+better way is to let the variable that contains the reference fall out of scope.
+
+Watch out for these three situations
+    1) Whenever a class manages its own memory, the programmer should be alert
+    for memory leaks.
+    2) Caches are another typical source of memory leaks.
+    3) Listeners and callbacks are another source of memory leaks.
+
+~~~~~~~HIGHLIGHT pg. 26 - caches and discussion~~~~~~~
