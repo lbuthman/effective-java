@@ -1,0 +1,33 @@
+Avoid finalizers
+
+- The try-finally block is used to reclaim non-memory resources, as seen later.
+
+- Never do anything time critical with finalizer since it may never get executed. One example
+is trying to close files with finalizers, bad idea. How finalizer algorithms are prioritized
+varies widely in JVM distributions. This may lead to local testing that passes, only for it
+to fail in a different implementation.
+
+- Never depend on a finalizer to update critical persistent state items, like using it to
+release a lock on a shared DB resource.
+
+- Naughty list: System.gc, System.runFinalization, System.funFinalizersOnExit, and
+Runtime.runFinalizersOnExit
+
+- If an uncaught exception is thrown during finalization, that exception is ignored and
+finalization of that object terminates.
+
+- Instead, provide explicit termination methods in classes whose objects encapsulate resources
+that require termination. Require clients to invoke these methods on each instance that is
+used. The instance must keep track of whether it has been terminated, usually in a private
+field. The private field records when the object is no longer valid and other methods check
+this state, throwing an IllegalStateException if use attempts are called after it should be
+terminated.
+
+- Like state before, explicit termination methods are typically used in combination with
+the try-finally construct to ensure termination.
+
+- Two legitimate uses for Finalizers
+    1) Act as a safety net in case the object owner forgets to call the explicit method,
+    however, the finalizer should log a warning if it finds that the resources have not
+    been terminated.
+    2) ~~~~~~~HIGHLIGHT - pg. 29 - native peers~~~~~~~
