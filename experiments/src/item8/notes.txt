@@ -1,0 +1,20 @@
+Obey the general contract when overriding equals
+
+- 4 times to never override equals() method from Object
+    1) each instance is inherently unique -> the behavior of equals is already good
+    2) you don't care about providing an equality test
+    3) a superclass has already overriden it with the appropriate behavior for subclasses
+    4) the class is private or package private and you are certain its equals will never
+    be invoked. In this case you can drive home this by overriding it, only to throw an
+    AssertionError if called
+
+- When a class has a notion of logical equality, the equals() class should be overridden
+
+- When overriding equals(), the general contract must be maintained
+    * Reflexive -> x.equals(x) = true
+    * Symmetric -> if x.equals(y) then y.equals(x) = true
+    * Transitive -> if x.equals(y and y.equals(z) then x.equals(z) = true
+    * Consistent -> with multiple invocations, the result is always true
+    * Nullity -> x.equals(null) = false
+
+- HAND WAIVING!! --- refer to this when using it
