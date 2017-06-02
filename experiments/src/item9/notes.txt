@@ -1,0 +1,20 @@
+Always override hashCode() when you override equals()
+
+- The hashCode called on the same object should produce the same Integer.
+
+- If two Objects are equal according to equals(), then they should produce the same integer
+result for hashCode().
+
+- It is not required for unequal objects to produce unequal integer hash results, but proper
+distribution of values will ensure expected performance.
+
+- The example showed a telephone number used in a hash as a key for a name value. Without
+its hashCode being customized and consistent, the key will return null, violating the general
+contract.
+
+- A good hashCode tends to produce different results for different objects and is a deep
+subject. Some recommendations are given in the book so I will just HANDWAVE over it for now.
+
+- If a class is immutable and the cost of computing the hash code is significant, then
+hashCode() can be cached. If most objects of this type will be using it as a hash key though,
+then it must be calculated each time. If not, lazy initialization can be needed.
