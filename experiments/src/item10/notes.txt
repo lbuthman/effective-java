@@ -1,0 +1,11 @@
+Always override toString()
+
+- Providing a good toString makes a class pleasant to use.
+
+- When practical, a good toString() will return all the interesting information contained
+in the Object, being self-explanatory.
+
+- Consider whether to specify the return format in the documentation. This can be important
+for value classes. The disadvantage to specifying it is that once it is specified, you are
+stuck with it for life. Either way, document the intent clearly. If the format is not specified,
+provide programmatic access to all information contianed in the value returned by toString().
