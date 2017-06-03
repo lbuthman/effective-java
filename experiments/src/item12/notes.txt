@@ -1,0 +1,17 @@
+Consider implementing Comparable
+
+- compareTo() is the sole method in the Comparable interface. By implementing it, the
+class implies it contains a natural ordering.
+
+- By implementing Comparable, a class can interoperate with all of the many generic
+algorithms and collection implementations that depend on this implementation. Think of
+search, computing Extreme values, maintaining sorted collections, etc.
+
+- The general contract is similar to equals, stating the need for reflexivity, symmetry,
+and transitivity.
+
+- Just like a class that violates the hashCode() contract, compareTo() can break other
+classes that depend on comparisons.
+
+- The depths of the general contract are a bit abstract for me at the moment so again
+I will just HANDWAVE over it for now.
