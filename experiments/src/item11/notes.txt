@@ -1,0 +1,12 @@
+Override clone judiciously
+
+- The Clonable interface was intended to advertise that a class permits cloning. Buth
+it fails to serve this purpose because it lacks a clone method and the one from Object
+is protected. Yet, it is widely in use today so we must be aware and ready.
+
+- The implementation of Clonable modifies the behavior of a protected method in the super
+class, an atypical use for an interface.
+
+- There are a lot of ins & outs and care must be taken, especially when cloning objects
+that have arrays and/or references to other objects. For now, I will just HANDWAVE over
+it.
