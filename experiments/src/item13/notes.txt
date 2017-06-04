@@ -1,0 +1,36 @@
+Minimize the accessibility of classes and members
+
+- The singe most important indicator of module design quality is the degree to which the module
+hides its data and implementation details from other modules. Modules only communicate through
+APIs and do not know about the inner workings of the other. This is called "information hiding"
+or "encapsulation".
+
+- Make each class or member as inaccessible as possible.
+
+- For top-level (non-nested) classes and interfaces, there are two options: package-private and
+public
+    * If a top-level package-private class is used by only one class, consider making it a private
+    nested class.
+
+- For members (fields, methods, nested classes, and interfaces), there are four options: public,
+protected, package-private, and private.
+    * Members should first be private, upgrading to default only if other classes really need
+    access. However, if this becomes common, rethink the design and look for an added layer of
+    abstraction that can help decouple the code.
+
+~~~~~~~HIGHLIGHT - pg. 69 - package-private fields leaking into exported API~~~~~~~
+
+- A protected member is part of the API and represents a public commitment to an implementation
+detail. Protected members should be relatively rare.
+
+- Instance fields should never be public. Classes with public, mutable fields are not thread-safe
+because no action can be taken if the data is altered.
+
+- It is wrong for a class to have a public state final array field, or an accessor that returns
+such a field. If a class has such a field or accessor, clients will be able to modify the contents
+of the array. This is a frequent source of security holes. There are two ways to handle this:
+    1) Make the public array private and add a public immutable list.
+    2) Make the public array private and add a public method that returns a copy of the private
+    array.
+    * To choose between the two, think about what the client needs to do with the returns, what
+    is most convenient or gives better performance.
