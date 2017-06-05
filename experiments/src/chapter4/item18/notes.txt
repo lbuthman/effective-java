@@ -1,0 +1,19 @@
+Prefer interfaces to abstract classes
+
+- Two mechanisms in Java for multiple implementations: interfaces and abstract classes.
+
+- The big difference is that abstract methods can provide implementations for its methods while
+interfaces cannot. But a more important distinctions is that to implement an abstract class,
+you must subclass it. So while existing classes can be retrofitted to implement a new interface,
+an abstract class must be pushed to the top of an object's hierarchy since only one parent can
+exist for a class.
+
+- Combinatorial explosion -> bloated class hierarchies can lead to bloated classes containing
+many methods that differ only in the type of their arguments, as there are no types in the class
+hierarchy to capture common behaviors.
+
+~~~~~~~HIGHLIGHT - skeletal implementation discussion, abstract interfaces~~~~~~~
+
+- Public interfaces must be designed carefully, because once one is released and in use, it is
+nearly impossible to change. You can't write new methods without breaking all existing
+implementations. The Skeletal implementation discussed above can avoid this restriction.
