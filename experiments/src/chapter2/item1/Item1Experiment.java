@@ -1,4 +1,4 @@
-package item1;
+package chapter2.item1;
 
 /**
  * Created by lbuthman on 5/24/17.
@@ -23,7 +23,7 @@ class Brewer {
 
 public class Item1Experiment {
     public static void main(String[] args) {
-        //item1.Brewer failBrew = new item1.Brewer();
+        //chapter2.item1.Brewer failBrew = new chapter2.item1.Brewer();
         Brewer goodBrew = Brewer.makeBrew();
         goodBrew.cookBrew();
     }

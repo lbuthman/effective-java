@@ -1,4 +1,4 @@
-package item2;
+package chapter2.item2;
 
 /**
  * Created by lbuthman on 5/26/17.
