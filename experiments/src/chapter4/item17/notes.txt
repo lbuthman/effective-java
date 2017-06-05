@@ -1,0 +1,11 @@
+Design and document for inheritance or else prohibit it
+
+- The class must document precisely the effects of overriding any methods. A class must
+document any circumstances under which it might invoke an overridable method.
+
+- The only way to test a class designed for inheritance is to write subclasses. This is
+optimally done by someone other than the class author.
+
+- Constructors must not invoke overridable methods, directly or indirectly
+
+~~~~~~~HIGHLIGHT - wrapper discussion~~~~~~~~
