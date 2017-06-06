@@ -1,0 +1,9 @@
+Prefer class hierarchies to tagged classes
+
+- Tagged classes are classes the could implement more than one type of object, like either
+square or circle. It's pretty obvious the deficiencies, being verbose, error-prone, inefficient.
+
+- To properly implement a class hierarchy, first define an abstract class containing abstract
+methods for each subclass. If there are any methods that do not depend on the flavor of an
+implementation, put them in this class as normal methods. Same with common data fields. Next,
+define subclasses with appropriate methods and fields
