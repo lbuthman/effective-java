@@ -1,0 +1,16 @@
+Favor static member classes over non-static
+
+- There are four kinds of nested classes
+    1) static member classes
+    2) non-static member classes
+    3) anonymous classes
+    4) local classes
+
+- One common use of a static member class is a public helper class, used exclusively by its
+outer class.
+
+~~~~~~~HIGHLIGHT - discussion surrounding the Adaptor pattern~~~~~~~
+
+- If a member class does not require access to its enclosing instance, always put the static
+modifier in its declaration. Otherwise, extraneous references to the enclosing instance
+will always exist.
