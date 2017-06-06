@@ -1,0 +1,7 @@
+Use function objects to represent strategies
+
+- This section is referencing what I think are lambda expressions. Using these type of
+functions we can implement the Strategy Pattern.
+
+- There are examples of how to do this, but I believe lambda expressions are covered in
+another book as the predate this book.
