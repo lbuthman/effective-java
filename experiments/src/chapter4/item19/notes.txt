@@ -1,0 +1,13 @@
+Use interfaces only to define types
+
+- The "constant interface" consisting solely of static fields is a poor choice for an interface.
+That a class uses some constants is an implementation detail, but this design causes the
+implementation detail to leak into the API. In addition, it must be supported forever, even if
+there is a need to refactor at some point in time. Make them part of the class, use an enum
+type, or create a utility class.
+
+- In the case of utility classes, referring to classes requires the class name to be qualified.
+To avoid this, the import static statement can be used.
+
+- Interfaces serve as a "type" used to refer to instances of a class. When a class implements an
+interface, this should say something about what a client can do with instances of the class.
