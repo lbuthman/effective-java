@@ -1,0 +1,35 @@
+Don't use raw types in new code
+
+- A generic class is a class or interface with one or more "type parameters" in its declaration
+    -> List<E>
+
+- Generic classes and interfaces are collectively known as generic types
+
+- With generics, an improved type declaration is used for the collection that tells the compiler
+what items to expect in the collection.
+
+- It is legal to use collection types with out supplying type parameters, but don't.
+
+- The difference between List and List<Object> is the latter makes it explicit that the list
+can accept any Object.
+
+- Unbounded wildcard types allow a generic type declaration to be honored by also allowing
+any object type to be added, Set<E> -> Set<?>. The wildcard approach is safe since it alerts
+the compiler but raw types are not safe.
+
+~~~~~~~HIGHLIGHT -> you must use raw types in class literals~~~~~~~
+
+~~~~~~~HIGHLIGHT -> instanceof operator exception to generic types~~~~~~~
+
+- New Terms
+    * Parameterized type -> List<String>
+    * Actual type parameter -> String
+    * Generic type -> List<E>
+    * Formal type parameter -> E
+    * Unbounded wildcard -> List<?>
+    * Raw type -> List
+    * Bounded type parameter -> <E extends Number>
+    * Recursive type bound -> <T extends Comparable <T>>
+    * Bounded wildcard type -> List<? extends Number>
+    * Generic method -> static <E> List<E> as List (E[] a)
+    * Type token -> String.class
