@@ -1,0 +1,6 @@
+Favor generic types
+
+- This item is about how to create a generic type. It provides specific ideas for implementation
+and will therefore be a better reference than note for now.
+
+- The type parameter E is known as a "bounded type parameter", as seen before.
