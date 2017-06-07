@@ -1,0 +1,12 @@
+Eliminate unchecked warnings
+
+- When starting out with Generics, many warning will be generated; these will be reduced as
+experience is gained using them.
+
+- Eliminate every checked warning, even when it is difficult. The only caveat is after meticulously
+verifying that the code is type safe and will compile correctly, only then can the @SuppressWarning
+be used. Always suppress at the lowest scope. If the code being suppressed is more than a line or
+two long, move the suppression to a local variable, even if a new one needs to be created.
+
+- Every time the @SuppressWarning annotation is used provide a comment stating why it is safe to
+use.
