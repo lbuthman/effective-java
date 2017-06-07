@@ -1,0 +1,13 @@
+Prefer lists to arrays
+
+- Because arrays are "covariant", a type mismatch is not detected until runtime. Generics on the
+other hand are "invariant" and can catch the mismatch at compile time.
+
+- Arrays are also "reified", enforcing their elements at runtime. Generics however are implemented
+by "erasure" which is caught at compile time.
+
+- Arrays cannot be generic so it is not generally possible for a generic type to return an array
+of its elements. It also means confusing warnings can arise when using varags methods in combination
+with generic types.
+
+~~~~~~~HIGHLIGHT -> discussion surrounding vargas, generic functions and reified problems~~~~~~~
