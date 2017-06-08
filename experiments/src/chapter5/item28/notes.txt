@@ -1,0 +1,24 @@
+Use bounded wildcards to increase API flexibility
+
+- Parameterized types are invariant, List<Object> is not a supertype to List<String>. This can
+be a limitation unless a bounded wildcard type is used. Instead of Iterable<E> "Iterable of E",
+we can use Iterable<? extends E> "Iterable of some sub type of E".
+
+- The extend keyword is a bit misleading. Item26 goes over it, but basically each type is a
+subtype of itself. Extend let's us do this (? -> revisit Item26 for clarity).
+
+- Without the wildcard type, a parameter can only be used if its collection exactly matches.
+
+- Another example shows Collection<? super variableName>. This represents a parameter that is a
+"consumer" of the type.
+
+- For maximum flexibility, use wildcard types on input parameters that represent producers or
+consumers -> PECS: producer-extends; consumer-super. In other words, if a parameterized type
+represents a T that produces, use <? extends T>; if it represents a consumer of T, use<? super T>.
+If a parameter both produces and consumes T, use a normal generic List<T>
+
+- Comparators and Comparable are always consumers and so will always use super
+
+- If a type parameter appears only once in a method declaration, replace it with a wildcard.
+
+~~~~~~~HIGHLIGHT -> glossed over several details and points in this item~~~~~~~
