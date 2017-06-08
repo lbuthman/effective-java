@@ -1,0 +1,20 @@
+Favor generic methods
+
+- Static utility methods are good candidates for becoming generic.
+
+- Modify the method declaration to declare a type parameter representing the element type of
+all sets and use it in the method. The type parameter list, which declares the type parameter,
+goes between the method modifier and its return type
+    -> public static <E> Set<E> methodName(Set<E> s1, Set<E> s2)
+
+- One limitation with the above example is that both input sets and return set all have to be
+the same type. Remove this restriction by using bounded wildcard types.
+
+- Due to "type inference", the type parameter does not need to be specified explicitly.
+
+- Revisiting Item 1: use static builder methods to return proper generic types, eliminating the
+need for redundant parameter specifications.
+
+~~~~~~~HIGHLIGHT -> generic singleton factory discussion~~~~~~~
+
+~~~~~~~HIGHLIGHT -> recursive type bound discussion~~~~~~~
