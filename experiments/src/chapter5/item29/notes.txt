@@ -1,0 +1,17 @@
+Consider type-safe heterogeneous containers
+
+- The most common use of generics is for collections and single element containers like
+ThreadLocal and AtomicReference. The container is parameterized to one type, which is usually
+what is best. But not always. A database may return a row of arbitrary many columns and we need
+to access these in a type-safe way.
+
+- The technique to do this is to parameterize the key instead of the container.
+
+- When a class literal is passed among methods to communicate both compile-time and runtime
+type information, it is called a "type token".
+
+- The implementation in the book demonstrates this and is able to use and return keys of
+different types. Because of this it is heterogeneous and so the example Class is a "type-safe
+heterogeneous container".
+
+~~~~~~~HIGHLIGHT -> drawbacks of given implementation and helper method use~~~~~~~
