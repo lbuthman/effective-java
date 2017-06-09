@@ -1,0 +1,5 @@
+Use EnumMap instead of ordinal indexing
+
+- Again, watch out for ordinal(), this time to order an array.
+
+~~~~~~~HIGHLIGHT -> use of EnumMap~~~~~~~
