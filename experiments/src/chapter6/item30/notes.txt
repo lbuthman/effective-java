@@ -1,0 +1,14 @@
+Use enums instead of int constants
+
+- The first talks about old ways of approaching int and string constants for types and their
+drawbacks. Then talks about enums and their benefits as well as how they address the drawbacks
+from before.
+
+- Enums can start as simple collections of constants and turn into a fully featured abstraction.
+Really cool example of a fully featured enum with required/recommended syntax.
+
+- To associate behavior with an Enum type, declare an abstract method in the body and after
+each type, override it with the desired functionality. There is also an example of overriding
+the toString method.
+
+- Enums are good for sets when all the values are known at compile time.
