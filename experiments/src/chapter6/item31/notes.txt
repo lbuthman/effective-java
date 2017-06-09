@@ -1,0 +1,7 @@
+Use instance fields instead of ordinals
+
+- Be on the watch for ordinal() in an Enum type. I have to handwave over the reasons for now.
+
+- Values can be directly associated with enums, using the private field, constructor trick.
+
+- ordinal() is designed for EnumSet and EnumMap data structures.
