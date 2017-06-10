@@ -1,0 +1,5 @@
+Prefer annotations to naming patterns
+
+- Very general use of Annotations to display benefits over old styled naming patterns.
+
+- Annotation creation is typically used by tool-smiths and most programmers just use them.
