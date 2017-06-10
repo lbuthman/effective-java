@@ -1,0 +1,12 @@
+Emulate extensible Enums with interfaces
+
+- In older times, there was no Enum type and one had to be rigged up which is now an inferior
+implementation. The Enum type is not extensible, which is good because it can complicate
+design and implementations. But there is a valid use case for extensible enumerated types,
+which is the "opcode". It might be desirable to let a client programmer extend an API with
+opcodes.
+
+- This functionality can be achieved since enum types can implement arbitrary interfaces.
+
+- When using interfaces to emulate extensible enums, code in the extending Enum might get
+repeated. To avoid this, helper classes or static helper methods can be used.
