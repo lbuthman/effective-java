@@ -1,0 +1,6 @@
+Use marker interfaces to define type
+
+- A marker interface contains no method declarations, but merely designates ("marks") a class
+that implements the interface as having some property.
+
+~~~~~~~HIGHLIGHT -> marker interfaces vs. marker annotations
