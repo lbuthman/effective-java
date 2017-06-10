@@ -1,0 +1,7 @@
+Consistently use the Override annotation
+
+- One good case to always @Override a method from a super class is to avoid accidentally
+overloading the method instead.
+
+- In concrete classes, you don't have to @Override a method from an abstract method declaration,
+but is not harmful to do either.
