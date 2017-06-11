@@ -1,0 +1,9 @@
+Write doc comments for all exposed API elements
+
+- See Sun's article: How to Write Doc Comments
+
+- To document an API properly, precede every exported class, interface, constructor, method,
+and field declaration with a doc comment
+
+- The doc comment for a method should describe succinctly the contract between the method and
+its clients.
