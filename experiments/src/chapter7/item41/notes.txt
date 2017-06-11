@@ -1,0 +1,10 @@
+Use overloading judiciously
+
+- Avoid confusing uses of overloaded methods.
+
+- A safe, conservative policy is never to export two overloaded methods with the same
+number of parameters.
+
+- For constructors, exporting multiple overloadings with the same number of parameters is
+unlikely to cause confusion if it is always clear which overloading will apply to a given
+set of parameters.
