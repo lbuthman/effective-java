@@ -1,0 +1,18 @@
+Make defensive copies when needed
+
+- You must program defensively, with the assumption that clients of your class will do their
+best to destroy its invariants.
+
+- It is essential to make a defensive copy of each mutable parameter to the constructor. The
+example shows how the Date type parameter is mutable, so merely allowing a passed date parameter
+to be assigned is not good enough. Instead, a date still gets passed as a parameter, but the
+assignment happens by creating a new Date instance. This allows the internal instance to be
+distinct from the passed instance; any change to the external object will no effect now.
+
+- Defensive copies are made before checking the validity of the parameters, and the validity
+check is performed on the copies rather than on the originals.
+
+- Do not use the "clone" method to make defensive copies of a parameter whose type is subclassed
+by untrusted parties.
+
+- Modify accessors to return defensive copies of mutable internal fields.
