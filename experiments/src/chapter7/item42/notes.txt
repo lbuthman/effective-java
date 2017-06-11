@@ -1,0 +1,10 @@
+Use varargs judiciously
+
+- Varargs parameters can take zero or more arguments of a specified type.
+
+- Sometimes you want to use one or more arguments. Rather than checking a varargs for that
+one element, require a single parameter and a varargs. This forces a programmer to use the
+method correctly.
+
+- Don't retrofit every method that has a find array parameter with vararg. Use varargs only
+when a call operates on a variable length sequence of values
