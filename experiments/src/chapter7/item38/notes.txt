@@ -1,0 +1,10 @@
+Check parameters for validity
+
+- Methods and constructors almost always have restrictions on the parameters they case use.
+These should be enforced and documented.
+
+- For public methods, use the @throws tag to document thrown errors, typically the exception
+will be IllegalArgumentException, IndexOutOfBoundsException, or NullPointerException
+
+- For "unexported" (non-public) methods, generally check parameters with assertions. These
+will throw AssertionError if they fail and typically have no effect or cost.
