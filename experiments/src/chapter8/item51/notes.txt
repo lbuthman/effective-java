@@ -1,0 +1,9 @@
+Beware the performance of string concatenation
+
+- Using the string concatenation operator repeatedly to concatenate a string requires
+quadratic time in n. Since strings are immutable, the contents of both are copied.
+
+- To achieve better performance, use a StringBuilder
+
+- In the example, the StringBuilder may be "tuned" by allocating its size upfront. This had
+a large impact on the algorithms performance.
