@@ -1,0 +1,6 @@
+Know and use the libraries
+
+- By using a standard library, you take advantage of the knowledge of experts who wrote it
+and the experience of those who used it before you.
+
+- Every programmer should be familiar with the contents of java.lang, java.util, java.io
