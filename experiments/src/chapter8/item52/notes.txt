@@ -1,0 +1,8 @@
+Refer to items by their interfaces
+
+- If appropriate interface types exist, then parameters, return values, variables, and
+fields should all be declared using interface types. The only time you really need to
+refer to an object's class is when creating it with a constructor.
+
+- This item first mentions "appropriate interface", so if it doesn't exist or isn't
+appropriate, using a class is fine and even necessary.
