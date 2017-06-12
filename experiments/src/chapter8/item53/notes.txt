@@ -1,0 +1,4 @@
+Prefer interfaces to reflection
+
+- java.lang.reflect provides programmatic access to Class object's Constructors, Method,
+and Field instances. Moreover these components can be invoked and manipulated directly.
