@@ -1,0 +1,19 @@
+Adhere to generally accepted naming conventions
+
+- Naming conventions typically fall into the categories: typographical and grammatical
+
+- Type parameter names usually consist of a single letter
+    * T -> an arbitrary type
+    * E -> an element type of a collection
+    * K/V -> key and value types for a map
+    * X -> an exception
+
+- For grammatical conventions there are less defined
+    * Class and Enum -> singular noun or noun phrase
+    * Interface -> same as Class or with an adjective followed by "able" or "ible"
+    * Methods ->
+        - performed action -> verb or verb phrase
+        - return boolean -> "is" or "has" prefix followed by noun/noun phrase
+        - return non-boolean or attribute -> more flexible, "get" a typical prefix
+        - return converted type -> "to" prefix and then type
+        - return a view with different type -> "as" prefix and then type
