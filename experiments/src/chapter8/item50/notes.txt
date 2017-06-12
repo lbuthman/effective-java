@@ -1,0 +1,6 @@
+Avoid strings where other types are more appropriate
+
+- Avoid using strings to represent objects or value when better date types exist or
+could be written.
+
+~~~~~~~HIGHLIGHT -> a few ins and outs to this that I'm not familiar with~~~~~~~
