@@ -1,0 +1,13 @@
+Prefer primitive types to boxed primitives
+
+- Three main differences
+    1) primitives only have value, boxed also have identities
+    2) boxed primitives also have a non-functional value: null
+    3) primitives are more space and time efficient
+
+- Applying the == operator to boxed primitives is almost always wrong
+
+- When to use boxed primitives
+    - as elements, keys, and values in collections
+    - as type parameters in parameterized types
+    - when making reflective method invocations.
