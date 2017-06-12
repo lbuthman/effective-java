@@ -1,0 +1,12 @@
+Use native methods judiciously
+
+- JNI -> Java Native Interface
+
+- A "native method" allows code in other languages to execute code and then return to Java.
+
+ - There are three typical uses for native methods
+    1) to provide access to platform specific facilities
+    2) to access libraries in legacy code thus accessing legacy data
+    3) to write performance critical parts of the application for improved performance
+
+- It is rarely advisable to use native methods to improve performance.
