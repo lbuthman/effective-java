@@ -1,0 +1,14 @@
+Avoid float and double if exact answers are required
+
+- Merely rounding prior to printing does not always do the job.
+
+- The right way is to use BigDecimal, int, or long for monetary calculations. BigDecimal
+has methods to handle operations and for comparisons. Using int or long you can keep
+track of the decimal (cents) manually and convert as needed.
+
+- BigDecimal has eight rounding modes and can be used in a business context.
+
+- If the problem requires
+    * 9 decimal digits -> use int
+    * 18 decimal digits -> use long
+    * 19 and more decimal digits -> use BigDecimal
