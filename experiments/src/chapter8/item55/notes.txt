@@ -1,0 +1,8 @@
+Optimize judiciously
+
+- Strive to write good programs rather than fast ones
+
+- Those components of a design that are most difficult to change after the face are those
+specifying interactions between modules and the outside world.
+
+- It is generally the case that good API design is consistent with good performance.
