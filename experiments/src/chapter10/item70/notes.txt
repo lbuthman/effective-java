@@ -1,0 +1,9 @@
+Document thread safety
+
+- To enable safe concurrent use, a class must clearly document what level of thread safety
+it supports. Here is a list of general levels
+    -- immutable
+    -- unconditionally thread safe
+    -- conditionally thread safe
+    -- not thread safe
+    -- thread hostile
