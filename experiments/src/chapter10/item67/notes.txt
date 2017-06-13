@@ -1,0 +1,12 @@
+Avoid excess synchronization
+
+- Inside a synchronized region, do not invoke a method that is designed to be overridden
+or one provided by a client in the form of a function object.
+
+- CopyOnWriteArrayList has poor performance but can be great for observer lists.
+
+- As a rule, you should do as little work as possible inside a synchronized region.
+
+- When in doubt, do not synchronize your class but document that it is not thread safe.
+
+- If a method modifies a static field, you must synchronize access to this field.
