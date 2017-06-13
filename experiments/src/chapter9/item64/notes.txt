@@ -1,0 +1,11 @@
+Strive for failure atomicity
+
+- In general, a failed method invocation should leave the object in the state it was in
+prior to invocation. The simplest way to achieve this is with immutable objects.
+
+- For mutable objects, check parameters before performing the operation.
+
+- Order the method steps so that any part that may fail happens before the object is modified.
+
+- Another approach is to copy the objects data into a temporary object and rollback to it
+if needed.
