@@ -1,0 +1,7 @@
+Use lazy initialization judiciously
+
+- While lazy initialization decreases the cost of creating an instance, it increases the cost
+of accessing the field.
+
+- If a field is accessed only on a fraction of the instances of a class AND it is costly to
+initialize, then it can be good. The only way to know is to measure performance.
