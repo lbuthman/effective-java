@@ -1,0 +1,16 @@
+Consider using a customer serialized form
+
+- Do not accept the default serialized form without first considering whether it is appropriate.
+Once released, you will be very much tied to it.
+
+- Only accept the default form if it is largely identical to the encoding you would choose.
+
+- Using the default serialized form when an object's physical representation differs substantially
+from its logical data content has four disadvantages.
+    1) It permanently ties the exported API to the current internal representation.
+    2) It consumes excessive space.
+    3) It consumes excessive time.
+    4) It can cause stack overflow
+
+- The "transient" modifier indicates the instance field is to be omitted from a class's serialized
+form.
