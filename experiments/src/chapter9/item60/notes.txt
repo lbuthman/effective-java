@@ -1,0 +1,5 @@
+Favor the use of standard exceptions
+
+- Arguably, all erroneous method invocations boil down to an illegal argument
+(IllegalArgumentException) or an illegal state (IllegalStateException). Other exceptions
+specify the kind.
