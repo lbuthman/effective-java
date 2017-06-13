@@ -1,0 +1,9 @@
+Use exceptions only for exceptional conditions
+
+- Exceptions should never be used for ordinary control flow.
+
+- Use standard, easily recognizable idioms in preference to overly clever techniques that
+purport to improve performance. Even if it does improve performance, they may not forever
+as the platform steadily improves.
+
+~~~~~~~HIGHLIGHT -> state-testing methods and distinguished return value differentiation
