@@ -1,0 +1,13 @@
+Prefer concurrency utilities to wait and notify
+
+- Given the difficulty of using wait and notify correctly, use higher-level concurrency
+utilities instead.
+
+- java.util.concurrency falls into three categories
+    1) Executor Framework
+    2) concurrent collections
+    3) synchronizers
+
+- Use ConcurrentHashMap in preference to Collections.synchronizedMap or HashTable
+
+- For interval timing, always use System.nanoTime over System.currentTimeMillis
