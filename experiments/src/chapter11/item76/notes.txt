@@ -1,0 +1,9 @@
+Write readObject defensively
+
+- When an object is deserialized, it is critical to defensively copy any field containing an
+object reference that a client must not possess.
+
+- Do not use the writeUnshared or readUnshared methods.
+
+- Anytime you write a readObject method, you are writing a public constructor that must provide
+a valid instance regardless of what byte stream is given.
