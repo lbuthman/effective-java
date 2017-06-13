@@ -1,0 +1,5 @@
+Prefer executors and tasks to threads
+
+- Some good advice for the Executor Framework
+
+- check out "Java Concurrency in Practice"
