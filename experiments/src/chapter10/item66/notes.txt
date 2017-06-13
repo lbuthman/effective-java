@@ -1,0 +1,13 @@
+Synchronize access to shared mutable data
+
+- Proper use of "synchronized" will ensure that no method will ever observe the object in
+an inconsistent state. It also ensures that each thread entering a synchronized method or
+block sees the effect of all previous modifications that were guarded by the same lock.
+
+- Don't use Thread.stop
+
+- Synchronization has no effect unless both read and write operations are synchronized.
+
+- The "volatile" modifier doesn't perform mutual exclusion, but guarantees that any thread
+that reads a field will see the most recently written value. It can be tricky to use correctly
+though.
