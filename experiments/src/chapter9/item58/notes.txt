@@ -1,0 +1,11 @@
+Use checked exceptions for recoverable conditions and runtime exceptions for programming errors
+
+- Unchecked throwable runtime exceptions and errors indicate that recovery is impossible
+and continuing would do more harm than good. Runtime errors indicate programming errors.
+
+- Checked exceptions are recoverable.
+
+- The difference is not always apparent on which to use and requires consideration.
+
+- Because checked exceptions are generally recoverable, it should provide a method that
+furnishes information helpful to the caller so as to help it recover.
