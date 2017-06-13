@@ -1,0 +1,3 @@
+Avoid thread groups
+
+- Thread groups are obsolete, use thread pool executors instead
