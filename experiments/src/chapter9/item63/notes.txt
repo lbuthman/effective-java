@@ -1,0 +1,7 @@
+Include failure capture information in detail message
+
+- The detail message of an exception should contain the values of all parameters and fields
+that "contributed to the exception".
+
+- The error information should lean towards meaningful data, not prose. This can be set via
+a constructor for the thrown Exception, easily capturing the relevant info.
