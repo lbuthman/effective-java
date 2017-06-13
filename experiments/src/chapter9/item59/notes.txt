@@ -1,0 +1,8 @@
+Avoid unnecessary use of checked exceptions
+
+- If the exception condition cannot be prevented by proper use of the API AND the
+programmer using the API can take useful actions on the exception, then a checked
+exception is appropriate. Unless both of these conditions are true, an unchecked
+exception is more appropriate.
+
+~~~~~~~HIGHLIGHT -> refactoring checked exceptions
