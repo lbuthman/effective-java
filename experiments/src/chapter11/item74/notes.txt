@@ -1,0 +1,17 @@
+Implement serializable judiciously
+
+- Object serialization encodes objects as byte streams and reconstructs objects from encoding.
+
+- While it is simple to implement Serializable, the long-term cost can be substantial.
+
+- A major cost is it decreases the flexibility to change a class and implementation after it
+has been released.
+
+- Implementing default Serializable increases the likelihood of bugs and security holes
+
+- It increases the testing burden associated with a new release.
+
+- Classes designed for inheritance should rarely implement it and interfaces should rarely
+extend it.
+
+- Value classes should implement it.
