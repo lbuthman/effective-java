@@ -1,0 +1,3 @@
+Consider serialization proxies instead of serialized instance
+
+- The serialization proxy pattern greatly reduces the risk of implementing Serializable
