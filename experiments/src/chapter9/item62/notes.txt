@@ -1,0 +1,4 @@
+Document all exceptions thrown by each method
+
+- Always document checked exceptions individually, including precise conditions under which
+each one is thrown.
