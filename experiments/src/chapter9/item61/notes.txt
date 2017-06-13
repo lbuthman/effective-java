@@ -1,0 +1,3 @@
+Throw exceptions appropriate to the abstraction
+
+~~~~~~~HIGHLIGHT -> revisit when writing an API that throws to super class
