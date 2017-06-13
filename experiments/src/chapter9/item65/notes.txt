@@ -1,0 +1,3 @@
+Don't ignore exceptions
+
+- An empty try/catch defeats the purpose of exceptions.
